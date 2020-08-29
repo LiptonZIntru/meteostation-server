@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <title>Grafy</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'overview/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <input id="station_id" value="{{ id }}" hidden>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>Dnes</h2>
+            <div class="chart">
+                <canvas id="todayChart"></canvas>
+            </div>
+        </div>
+        <div class="flex-item">
+            <h2>Včera</h2>
+            <div class="chart">
+                <canvas id="yesterdayChart"></canvas>
+            </div>
+        </div>
+        <div class="flex-item">
+            <h2>Tento týden</h2>
+            <div class="chart">
+                <canvas id="thisWeekChart"></canvas>
+            </div>
+        </div>
+        <div class="flex-item">
+            <h2>Tento měsíc</h2>
+            <div class="chart">
+                <canvas id="thisMonthChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="{% static 'overview/index.js' %}"></script>
+</body>
+</html>
